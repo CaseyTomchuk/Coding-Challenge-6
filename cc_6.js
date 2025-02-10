@@ -17,6 +17,7 @@ console.log(`Sales Tax: $${calculateSalesTax(100, 0.05)}`); // Sales Tax: $5
 console.log(`Sales Tax: $${calculateSalesTax(150, 0.1)}`); // Sales Tax: $15
 
 // Task 3: Arrow Function
+
 let calculateBonus = (salary, performanceRating) => { // Takes in the inputs salary, performanceRating
     let bonusRatings = { //Creating an object to store the possible bonus ratings
         "Excellent": 0.2,
@@ -28,3 +29,17 @@ let calculateBonus = (salary, performanceRating) => { // Takes in the inputs sal
 }
 console.log(calculateBonus(5000, "Excellent")); // Bonus: $1000
 console.log(calculateBonus(7500, "Average")); // Bonus: $375
+
+// Task 4: Parameters and Arguments
+
+function calculateSubscriptionCost(plan, months, discount = 0) {
+    let plans = { // Creating an object to store the types of plans and their cost
+        "Basic": 10,
+        "Premium": 20,
+        "Enterprise": 50
+    };
+    let subscription = (plans[plan] * months) - discount; // Multiply the cost of the monthly plan by the number of months, and subtract the discount
+    return (`Total Cost: ${subscription}`)
+}
+console.log(calculateSubscriptionCost("Basic", 6, 10)); // Expected output: "Total Cost: $50"
+console.log(calculateSubscriptionCost("Premium", 12, 0)); // Expected output: "Total Cost: $240"
