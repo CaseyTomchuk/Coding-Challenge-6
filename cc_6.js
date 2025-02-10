@@ -79,3 +79,17 @@ return function(newExpense) {
 let tracker = createExpenseTracker(); // Creating a variable so we can output our function
 console.log(`Total Expenses: $${tracker(200)}`); // Expected output: "Total Expenses: $200"
 console.log(`Total Expenses: $${tracker(150)}`); // Expected output: "Total Expenses: $350"
+
+// Task 8: Recursion in Javascript
+function calculateYearsToPromotion(level) {
+
+    if (level >= 10) {
+        return 0 // If we are already at level 10, there are no more promotions
+    }
+    return 2 + calculateYearsToPromotion(level + 1); // adds 2 years to the total for each additional level until level 10
+}
+
+console.log(`Number of years to reach level 10: ${calculateYearsToPromotion(7)} years`) // Expected output: "Years to Level 10: 6"
+console.log(`Number of years to reach level 10: ${calculateYearsToPromotion(5)} years`) // Expected output: "Years to Level 10: 10"
+
+// Side note: for the first 3 commits I decided to change the test data, but I changed it for the rest of the assignment, sorry if that causes confusion in grading
