@@ -64,3 +64,18 @@ let discountFunction = amount => amount > 500 ? amount * 0.9 : amount; // Simplf
 
 let updatedOrders = applyBulkDiscount(orders, discountFunction);
 console.log(updatedOrders);  // Expected output: [200, 540, 1080, 450, 720]
+
+// Task 7: Closures
+
+function createExpenseTracker() {
+let expenses = 0 // Set expenses to 0
+
+return function(newExpense) {
+    expenses += newExpense // Adds the new expense to the existing expense total
+    return expenses;
+};
+};
+
+let tracker = createExpenseTracker(); // Creating a variable so we can output our function
+console.log(`Total Expenses: $${tracker(200)}`); // Expected output: "Total Expenses: $200"
+console.log(`Total Expenses: $${tracker(150)}`); // Expected output: "Total Expenses: $350"
